@@ -1,1 +1,20 @@
-xx
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - echo "Installing AWS CLI..."
+      - pip install awscli
+  build:
+    commands:
+      - echo "Building and deploying the HTML website..."
+      - aws s3 cp ./your-html-files s3://your-s3-bucket-name --recursive
+  post_build:
+    commands:
+      - echo "Website deployed successfully!"
+
+artifacts:
+  files: '**/*'
