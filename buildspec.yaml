@@ -4,7 +4,6 @@ phases:
   build:
     commands:
       - echo "Building and deploying the HTML website..."
-      - aws s3 cp ./your-html-files s3://your-s3-bucket-name --recursive
   post_build:
     commands:
       - echo "Website deployed successfully!"
