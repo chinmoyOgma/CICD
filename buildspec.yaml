@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   build:
     commands:
@@ -7,6 +6,5 @@ phases:
   post_build:
     commands:
       - echo "Website deployed successfully!"
-
 artifacts:
   files: '**/*'
